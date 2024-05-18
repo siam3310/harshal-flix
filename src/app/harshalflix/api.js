@@ -2,7 +2,7 @@ const Data = [
     {
         "photo": "/img/Scam 2003 - The Telgi Story (2023).jpg",
         id: 104,
-        "title": "Scam 2003 - The Telgi Story (2023) (Part 2)",
+        "title": "Siam",
         "category": "Drama",
         "size": "1.65 GB",
         "url": "https://drive.google.com/file/d/1XSP3y5t3-MlSU9huuEGNUN4T95-SBB97/view"
