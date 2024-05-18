@@ -16,7 +16,7 @@ const Admin = () => {
     }
     const submitUser = (e) => {
         e.preventDefault();
-        if (user.email === 'mdown6469@gmail.com' && user.password === 'AdminFlix') {
+        if (user.email === 'admin' && user.password === 'admin') {
             setLoggedIn(true);
             router.push('/admin/addmovie');
         } else {
