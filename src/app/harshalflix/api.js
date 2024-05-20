@@ -4,8 +4,8 @@ const Data = [
         id: 104,
         "title": "Siam",
         "category": "Drama",
-        "size": "1.65 GB",
-        "url": "https://drive.google.com/file/d/1XSP3y5t3-MlSU9huuEGNUN4T95-SBB97/view"
+        "size": "1.00 GB",
+        "url": "https://harshalflix.netlify.app"
     },
     {
         "photo": "/img/Scam 2003 - The Telgi Story (2023).jpg",
