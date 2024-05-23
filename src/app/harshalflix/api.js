@@ -1,11 +1,11 @@
 const Data = [
     {
-        "photo": "/img/Scam 2003 - The Telgi Story (2023).jpg",
+        "photo": "https://m.media-amazon.com/images/M/MV5BYTkzM2YzYzYtZWM1Ny00NDY5LWE2ZTgtYjgwNTk1ZDRiNmU4XkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_.jpg",
         id: 104,
         "title": "Siam",
-        "category": "Drama",
+        "category": "Hindi",
         "size": "1.00 GB",
-        "url": "https://harshalflix.netlify.app"
+        "url": "#"
     },
     {
         "photo": "/img/Scam 2003 - The Telgi Story (2023).jpg",
