@@ -43,29 +43,30 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className='bg-[#121212]'>
+    <div className="bg-[#121212]">
       <Header />
-      <div className='relative mt-[7vh] md:mt-[10vh]'>
+      <div className="relative mt-[7vh] md:mt-[10vh]">
         {/* Centered Search Bar with margin-top adjustment */}
-        <div className='flex justify-center'>
+        <div className="flex justify-center">
           <input
-            type='search'
-            className='w-full md:w-80 lg:w-96 xl:w-1/3 rounded-lg border-2 border-[#00FE94] p-3 text-black font-bold placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-[#00FE94]'
+            type="search"
+            className="w-full md:w-80 lg:w-96 xl:w-1/3 rounded-lg border-2 border-[#00FE94] p-3 text-black font-bold placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-[#00FE94]"
             value={inputValue}
             onChange={handleInputChange}
-            placeholder='Search...'
+            placeholder="Search..."
           />
         </div>
         {/* Categories Box with modern border style */}
-        <div className='mt-8 flex justify-center'>
-          <div className='w-full md:w-[80%] lg:w-[70%]'>
-            <div className='border-2 border-[#00FE94] rounded-lg p-6'>
-              <nav className='flex flex-wrap items-center justify-center gap-x-5 gap-y-3'>
+        <div className="mt-8 flex justify-center">
+          <div className="w-full md:w-[80%] lg:w-[70%]">
+            <div className="border-2 border-[#00FE94] rounded-lg p-6">
+              <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
                 {uniqueCategories.map((category) => (
-                  <li key={category} className='list-none'>
+                  <li key={category} className="list-none">
                     <button
                       onClick={() => filterByCategory(category)}
-                      className='cursor-pointer rounded-lg bg-[#00FE94] px-5 py-3 text-black font-bold hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95'>
+                      className="cursor-pointer rounded-lg bg-[#00FE94] px-5 py-3 text-black font-bold hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95"
+                    >
                       {category}
                     </button>
                   </li>
@@ -75,9 +76,10 @@ const Page: React.FC = () => {
           </div>
         </div>
       </div>
-      <main className='mt-10 flex justify-center'>
-        <div className='w-full max-w-[111em]'>
-          <div className='grid grid-cols-2 gap-y-10 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
+      <main className="mt-10 flex justify-center">
+        <div className="w-full max-w-[111em]">
+          {/* Responsive Grid */}
+          <div className="grid grid-cols-2 gap-4 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
             {movies.map((curr, i) => {
               const { photo, title, size, url } = curr;
               return (
