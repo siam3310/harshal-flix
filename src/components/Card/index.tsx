@@ -13,7 +13,8 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ photo, title, size, url, key, index }) => {
   return (
     <div
-      className='mx-auto flex w-full flex-col overflow-hidden rounded-xl bg-[#121212] text-[#D1D5DB] border-2 border-[#00FE94] p-5 shadow-md'>
+      className='mx-auto flex w-full flex-col overflow-hidden rounded-xl bg-[#121212] text-[#D1D5DB] border-2 border-[#00FE94] p-5 shadow-md'
+      key={key}>
       <Image
         src={photo}
         alt={title + ' image'}
