@@ -43,7 +43,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className='bg-red-50'>
+    <div className='bg-[#121212]'>
       <Header />
       <div className='relative mt-[8vh]'>
         <nav className='flex flex-wrap items-center justify-center'>
