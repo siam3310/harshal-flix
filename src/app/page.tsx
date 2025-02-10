@@ -45,9 +45,9 @@ const Page: React.FC = () => {
   return (
     <div className='bg-[#121212]'>
       <Header />
-      <div className='relative mt-[5vh] md:mt-[8vh] bg-[#121212]'>
-        <div className='mb-5 bg-[#121212]'>
-          {/* Centered Search Bar */}
+      <div className='relative mt-5'>
+        <div className='mb-5'>
+          {/* Centered Search Bar with Margin Top for Space Below Header */}
           <div className='mb-4 flex justify-center'>
             <input
               type='search'
