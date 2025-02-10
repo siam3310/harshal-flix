@@ -47,15 +47,17 @@ const Page: React.FC = () => {
       <Header />
       <div className='relative mt-[5vh] md:mt-[8vh]'>
         <div className='mb-5'>
-          <div className='mb-4'>
+          {/* Centered Search Bar */}
+          <div className='mb-4 flex justify-center'>
             <input
               type='search'
-              className='mb-2 w-full md:w-48 rounded border-2 border-[#00FE94] p-2 text-black font-bold'
+              className='mb-2 w-full md:w-72 rounded border-2 border-[#00FE94] p-2 text-black font-bold'
               value={inputValue}
               onChange={handleInputChange}
               placeholder='Search...'
             />
           </div>
+          {/* Categories Below Search Bar */}
           <nav className='flex flex-wrap items-center justify-center'>
             <ul className='flex flex-wrap items-center justify-center gap-x-5 gap-y-2'>
               {uniqueCategories.map((category) => (
