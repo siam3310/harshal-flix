@@ -20,6 +20,7 @@ const Page: React.FC = () => {
     () => [...new Set(Data.map((movie) => movie.category)), 'All'],
     []
   );
+
   const filterByCategory = (category: string) => {
     if (category === 'All') {
       setMovies(Data);
@@ -27,6 +28,7 @@ const Page: React.FC = () => {
       setMovies(Data.filter((movie) => movie.category === category));
     }
   };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
@@ -39,6 +41,7 @@ const Page: React.FC = () => {
       setMovies(filteredMovies);
     }
   };
+
   return (
     <div className='bg-red-50'>
       <Header />
@@ -49,7 +52,7 @@ const Page: React.FC = () => {
               <li key={category}>
                 <button
                   onClick={() => filterByCategory(category)}
-                  className='cursor-pointer rounded-lg bg-[#00FE94] px-2 py-1 text-white hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95'>
+                  className='cursor-pointer rounded-lg bg-[#00FE94] px-4 py-2 text-black font-bold hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95'>
                   {category}
                 </button>
               </li>
@@ -58,7 +61,7 @@ const Page: React.FC = () => {
           <div className='mb-0 mt-2 md:relative md:ml-20 md:w-48'>
             <input
               type='search'
-              className='mb-2 rounded border-2 border-[#00FE94] p-2'
+              className='mb-2 rounded border-2 border-[#00FE94] p-2 text-black font-bold'
               value={inputValue}
               onChange={handleInputChange}
               placeholder='Search...'
