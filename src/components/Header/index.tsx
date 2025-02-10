@@ -3,7 +3,7 @@ import logo from '../../../public/logo.png';
 
 const Header = () => {
   return (
-    <header className='fixed top-0 z-20 w-full bg-white bg-opacity-60 ring-2 ring-red-300 ring-opacity-50 backdrop-blur-lg backdrop-saturate-200'>
+    <header className='fixed top-0 z-20 w-full bg-[#121212] bg-opacity-90 ring-2 ring-[#00FE94] ring-opacity-50 backdrop-blur-lg backdrop-saturate-200'>
       <Image
         src={logo}
         alt='HarshalFlix'
