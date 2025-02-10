@@ -59,7 +59,7 @@ const Page: React.FC = () => {
         {/* Categories Box with modern border style */}
         <div className='mt-8 flex justify-center'>
           <div className='w-full md:w-[80%] lg:w-[70%]'>
-            <div className='border-3 border-[#00FE94] rounded-lg p-5'>
+            <div className='border-2 border-[#00FE94] rounded-lg p-6'>
               <nav className='flex flex-wrap items-center justify-center gap-x-5 gap-y-3'>
                 {uniqueCategories.map((category) => (
                   <li key={category} className='list-none'>
