@@ -16,22 +16,28 @@ export interface Movie {
 const Page: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>(Data);
   const [inputValue, setInputValue] = useState('');
-  const uniqueCategories = useMemo(
-    () => [...new Set(Data.map((movie) => movie.category)), 'All'],
-    []
-  );
+  
+  // Generating unique categories
+  const uniqueCategories = useMemo(() => {
+    const categories = Data.map((movie) => movie.category);
+    return ['All', ...new Set(categories)];
+  }, []);
 
+  // Filter by category
   const filterByCategory = (category: string) => {
     if (category === 'All') {
       setMovies(Data);
     } else {
-      setMovies(Data.filter((movie) => movie.category === category));
+      const filtered = Data.filter((movie) => movie.category === category);
+      setMovies(filtered);
     }
   };
 
+  // Handle search input change
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
+
     if (value.trim() === '') {
       setMovies(Data);
     } else {
@@ -45,20 +51,24 @@ const Page: React.FC = () => {
   return (
     <div className="bg-gray-50">
       <Header />
+      
+      {/* Navigation Section */}
       <div className="relative mt-[8vh]">
-        {/* Navigation */}
         <nav className="flex flex-wrap items-center justify-center">
+          {/* Categories */}
           <ul className="flex flex-wrap items-center justify-center gap-4">
             {uniqueCategories.map((category) => (
               <li key={category}>
                 <button
                   onClick={() => filterByCategory(category)}
-                  className="cursor-pointer rounded-lg bg-[#00FE94] px-4 py-2 text-white transition-all hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95 shadow-lg">
+                  className="cursor-pointer rounded-lg bg-[#00FE94] px-4 py-2 text-white transition-all hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95 shadow-md">
                   {category}
                 </button>
               </li>
             ))}
           </ul>
+
+          {/* Search Input */}
           <div className="mb-2 mt-4 md:relative md:ml-20 md:w-64">
             <input
               type="search"
@@ -71,7 +81,7 @@ const Page: React.FC = () => {
         </nav>
       </div>
 
-      {/* Main Section */}
+      {/* Movies Section */}
       <main className="mt-8 flex justify-center">
         <div className="w-full max-w-[111em]">
           <div className="grid grid-cols-2 gap-6 px-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
