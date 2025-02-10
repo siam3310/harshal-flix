@@ -20,6 +20,7 @@ const Page: React.FC = () => {
     () => [...new Set(Data.map((movie) => movie.category)), 'All'],
     []
   );
+
   const filterByCategory = (category: string) => {
     if (category === 'All') {
       setMovies(Data);
@@ -27,6 +28,7 @@ const Page: React.FC = () => {
       setMovies(Data.filter((movie) => movie.category === category));
     }
   };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
@@ -39,36 +41,40 @@ const Page: React.FC = () => {
       setMovies(filteredMovies);
     }
   };
+
   return (
-    <div className='bg-red-50'>
+    <div className="bg-gray-50">
       <Header />
-      <div className='relative mt-[8vh]'>
-        <nav className='flex flex-wrap items-center justify-center'>
-          <ul className='flex flex-wrap items-center justify-center gap-x-5 gap-y-2'>
+      <div className="relative mt-[8vh]">
+        {/* Navigation */}
+        <nav className="flex flex-wrap items-center justify-center">
+          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
             {uniqueCategories.map((category) => (
               <li key={category}>
                 <button
                   onClick={() => filterByCategory(category)}
-                  className='cursor-pointer rounded-lg bg-red-500 px-2 py-1 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 active:scale-95'>
+                  className="cursor-pointer rounded-full border-2 border-[#00FE94] bg-white px-4 py-2 text-[#00FE94] transition-all hover:bg-[#00FE94] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95">
                   {category}
                 </button>
               </li>
             ))}
           </ul>
-          <div className='mb-0 mt-2 md:relative md:ml-20 md:w-48'>
+          <div className="mb-2 mt-4 md:relative md:ml-20 md:w-64">
             <input
-              type='search'
-              className='mb-2 rounded border-2 border-[#991B1B] p-2'
+              type="search"
+              className="w-full rounded-full border-2 border-[#00FE94] px-4 py-2 text-sm placeholder-[#00FE94] focus:outline-none focus:ring-2 focus:ring-[#00FE94]"
               value={inputValue}
               onChange={handleInputChange}
-              placeholder='Search...'
+              placeholder="Search movies..."
             />
           </div>
         </nav>
       </div>
-      <main className='mt-5 flex justify-center'>
-        <div className='w-full max-w-[111em]'>
-          <div className='grid grid-cols-1 gap-y-10 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
+
+      {/* Main Section */}
+      <main className="mt-8 flex justify-center">
+        <div className="w-full max-w-[111em]">
+          <div className="grid grid-cols-2 gap-6 px-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
             {movies.map((curr, i) => {
               const { photo, title, size, url } = curr;
               return (
@@ -85,6 +91,7 @@ const Page: React.FC = () => {
           </div>
         </div>
       </main>
+
       <Footer />
     </div>
   );
