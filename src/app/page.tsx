@@ -9,7 +9,8 @@ export interface Movie {
   photo: string;
   title: string;
   size: string;
-  url: string;
+  downloadLinks: string[];  // Added for download links
+  watchLinks: string[];     // Added for watch links
   category: string;
 }
 
@@ -79,7 +80,7 @@ const Page: React.FC = () => {
         <div className='w-full max-w-[111em]'>
           <div className='grid grid-cols-2 gap-y-10 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
             {movies.map((curr, i) => {
-              const { photo, title, size, url } = curr;
+              const { photo, title, size, downloadLinks, watchLinks } = curr;
               return (
                 <Card
                   key={i}
@@ -87,7 +88,8 @@ const Page: React.FC = () => {
                   photo={photo}
                   title={title}
                   size={size}
-                  url={url}
+                  downloadLinks={downloadLinks}  // Pass downloadLinks to Card
+                  watchLinks={watchLinks}        // Pass watchLinks to Card
                 />
               );
             })}
