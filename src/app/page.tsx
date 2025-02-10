@@ -59,7 +59,7 @@ const Page: React.FC = () => {
         {/* Categories Box with modern border style */}
         <div className='mt-8 flex justify-center'>
           <div className='w-full md:w-[80%] lg:w-[70%]'>
-            <div className='border-2 border-[#00FE94] rounded-lg p-5'>
+            <div className='border-3 border-[#00FE94] rounded-lg p-5'>
               <nav className='flex flex-wrap items-center justify-center gap-x-5 gap-y-3'>
                 {uniqueCategories.map((category) => (
                   <li key={category} className='list-none'>
@@ -77,7 +77,7 @@ const Page: React.FC = () => {
       </div>
       <main className='mt-10 flex justify-center'>
         <div className='w-full max-w-[111em]'>
-          <div className='grid grid-cols-1 gap-y-10 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
+          <div className='grid grid-cols-2 gap-y-10 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
             {movies.map((curr, i) => {
               const { photo, title, size, url } = curr;
               return (
