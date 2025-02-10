@@ -5,12 +5,13 @@ interface CardProps {
   photo: string;
   title: string;
   size: string;
-  url: string;
+  downloadLinks: string[];
+  watchLinks: string[];
   key: number;
   index: number;
 }
 
-const Card: React.FC<CardProps> = ({ photo, title, size, url, key, index }) => {
+const Card: React.FC<CardProps> = ({ photo, title, size, downloadLinks, watchLinks, key, index }) => {
   return (
     <div
       className='mx-auto flex w-0 animate-[card-grow_300ms_ease_0s_1_normal_forwards] flex-col overflow-hidden rounded-xl bg-[#121212] opacity-100 shadow-md border-2 border-[#00FE94]'
@@ -31,13 +32,34 @@ const Card: React.FC<CardProps> = ({ photo, title, size, url, key, index }) => {
         <span className='text relative mb-3 mt-auto cursor-default lg:text-sm text-[#D1D5DB]'>
           Size: {size}
         </span>
-        <a
-          href={url}
-          target='_blank'
-          rel='noreferrer'
-          className='relative mx-auto my-5 w-fit cursor-pointer select-none px-6 py-3 text-center font-bold text-[#00FE94] border-[3px] border-[#00FE94] rounded-lg'>
-          Download
-        </a>
+
+        {/* Render Download Links */}
+        <div>
+          {downloadLinks.map((link, idx) => (
+            <a
+              key={idx}
+              href={link}
+              target='_blank'
+              rel='noreferrer'
+              className='relative mx-auto my-2 w-fit cursor-pointer select-none px-6 py-3 text-center font-bold text-[#00FE94] border-[3px] border-[#00FE94] rounded-lg'>
+              Download {idx + 1}
+            </a>
+          ))}
+        </div>
+
+        {/* Render Watch Links */}
+        <div>
+          {watchLinks.map((link, idx) => (
+            <a
+              key={idx}
+              href={link}
+              target='_blank'
+              rel='noreferrer'
+              className='relative mx-auto my-2 w-fit cursor-pointer select-none px-6 py-3 text-center font-bold text-[#00FE94] border-[3px] border-[#00FE94] rounded-lg'>
+              Watch {idx + 1}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
