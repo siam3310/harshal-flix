@@ -45,29 +45,31 @@ const Page: React.FC = () => {
   return (
     <div className='bg-[#121212]'>
       <Header />
-      <div className='relative mt-[8vh]'>
-        <nav className='flex flex-wrap items-center justify-center'>
-          <ul className='flex flex-wrap items-center justify-center gap-x-5 gap-y-2'>
-            {uniqueCategories.map((category) => (
-              <li key={category}>
-                <button
-                  onClick={() => filterByCategory(category)}
-                  className='cursor-pointer rounded-lg bg-[#00FE94] px-4 py-2 text-black font-bold hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95'>
-                  {category}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <div className='mb-0 mt-2 md:relative md:ml-20 md:w-48'>
+      <div className='relative mt-[5vh] md:mt-[8vh]'>
+        <div className='mb-5'>
+          <div className='mb-4'>
             <input
               type='search'
-              className='mb-2 rounded border-2 border-[#00FE94] p-2 text-black font-bold'
+              className='mb-2 w-full md:w-48 rounded border-2 border-[#00FE94] p-2 text-black font-bold'
               value={inputValue}
               onChange={handleInputChange}
               placeholder='Search...'
             />
           </div>
-        </nav>
+          <nav className='flex flex-wrap items-center justify-center'>
+            <ul className='flex flex-wrap items-center justify-center gap-x-5 gap-y-2'>
+              {uniqueCategories.map((category) => (
+                <li key={category}>
+                  <button
+                    onClick={() => filterByCategory(category)}
+                    className='cursor-pointer rounded-lg bg-[#00FE94] px-4 py-2 text-black font-bold hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95'>
+                    {category}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
       <main className='mt-5 flex justify-center'>
         <div className='w-full max-w-[111em]'>
