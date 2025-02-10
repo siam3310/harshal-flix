@@ -48,12 +48,12 @@ const Page: React.FC = () => {
       <div className="relative mt-[8vh]">
         {/* Navigation */}
         <nav className="flex flex-wrap items-center justify-center">
-          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
+          <ul className="flex flex-wrap items-center justify-center gap-4">
             {uniqueCategories.map((category) => (
               <li key={category}>
                 <button
                   onClick={() => filterByCategory(category)}
-                  className="cursor-pointer rounded-full border-2 border-[#00FE94] bg-white px-4 py-2 text-[#00FE94] transition-all hover:bg-[#00FE94] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95">
+                  className="cursor-pointer rounded-lg bg-[#00FE94] px-4 py-2 text-white transition-all hover:bg-[#00c87a] focus:outline-none focus:ring-2 focus:ring-[#00FE94] focus:ring-offset-2 active:scale-95 shadow-lg">
                   {category}
                 </button>
               </li>
@@ -62,7 +62,7 @@ const Page: React.FC = () => {
           <div className="mb-2 mt-4 md:relative md:ml-20 md:w-64">
             <input
               type="search"
-              className="w-full rounded-full border-2 border-[#00FE94] px-4 py-2 text-sm placeholder-[#00FE94] focus:outline-none focus:ring-2 focus:ring-[#00FE94]"
+              className="w-full rounded-lg border-2 border-[#00FE94] px-4 py-2 text-sm placeholder-[#00FE94] focus:outline-none focus:ring-2 focus:ring-[#00FE94]"
               value={inputValue}
               onChange={handleInputChange}
               placeholder="Search movies..."
